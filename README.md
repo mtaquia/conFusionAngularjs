@@ -1,5 +1,7 @@
 # conFusionAngularjs
-This is my project of Coursera course AngularJS .
+This is my project of Coursera course AngularJS about a web app for a restaurant.
+
+
 You need to run $ bower install   in order to install dependencies .
 
-We add some features managed by AngularJS
+We will add some features managed by AngularJS.

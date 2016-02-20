@@ -1,0 +1,3 @@
+#Avoid libraries and frameworks,users will download by themselves 
+bower_components/
+miniex/
