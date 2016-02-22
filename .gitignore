@@ -1,3 +1,5 @@
 #Avoid libraries and frameworks,users will download by themselves 
 bower_components/
 miniex/
+miniangular/
+notes_angular.txt
