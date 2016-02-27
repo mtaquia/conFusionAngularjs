@@ -3,3 +3,5 @@ bower_components/
 miniex/
 miniangular/
 notes_angular.txt
+node_modules/
+.tmp/
