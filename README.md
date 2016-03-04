@@ -7,3 +7,5 @@ You need to run $ bower install   in order to install dependencies .
 We will add some features managed by AngularJS.
 
 5.- Using gulp to automate tasks.It generates a dist folder for use.
+
+10.- Adding index.html and using angular templates.
