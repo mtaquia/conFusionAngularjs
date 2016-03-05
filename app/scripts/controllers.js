@@ -70,10 +70,10 @@ angular.module('confusionApp')
             };
         }])
 
-        .controller('DishDetailController', ['$scope', '$routeParams','menuFactory', function($scope, $routeParams, menuFactory) {
+        .controller('DishDetailController', ['$scope', '$stateParams','menuFactory', function($scope, $stateParams, menuFactory) {
 
-         //deleted Uthapizza with comments and add a simplification
-			var dish = menuFactory.getDish(parseInt($routeParams.id,10));
+         //Update the DishDetailController to use $stateParams
+			var dish = menuFactory.getDish(parseInt($stateParams.id,10));
 
             $scope.dish = dish;
         }])
