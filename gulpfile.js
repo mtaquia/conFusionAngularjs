@@ -22,14 +22,15 @@ gulp.task('jshint',function(){
       .pipe(jshint.reporter(stylish));
     });
 
-gulp.task('usemin',['jshint'], function(){
-      return gulp.src('./app/menu.html')
-      .pipe(usemin({
-        css:[minifycss(),rev()],
-        js:[ngannotate(),uglify(),rev()]
-      }))
-      .pipe(gulp.dest('dist/'));
-    });
+gulp.task('usemin', ['jshint'], function () {
+	return gulp.src('app/views/**/*.html').pipe(usemin({
+		css: [minifycss(), rev()],
+		js: [ngannotate(), uglify(), rev()]
+	})).pipe(gulp.dest('./dist/views')), gulp.src('./app/index.html').pipe(usemin({
+		css: [minifycss(), rev()],
+		js: [ngannotate(), uglify(), rev()]
+	})).pipe(gulp.dest('./dist'));
+});
 
 //Images
 gulp.task('imagemin', function(){
