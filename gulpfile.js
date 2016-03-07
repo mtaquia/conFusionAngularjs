@@ -23,13 +23,18 @@ gulp.task('jshint',function(){
     });
 
 gulp.task('usemin', ['jshint'], function () {
-	return gulp.src('app/views/**/*.html').pipe(usemin({
-		css: [minifycss(), rev()],
-		js: [ngannotate(), uglify(), rev()]
-	})).pipe(gulp.dest('./dist/views')), gulp.src('./app/index.html').pipe(usemin({
-		css: [minifycss(), rev()],
-		js: [ngannotate(), uglify(), rev()]
-	})).pipe(gulp.dest('./dist'));
+	return gulp.src('app/views/**/*.html')
+		.pipe(usemin({
+			css: [minifycss(), rev()],
+			js: [ngannotate(), uglify(), rev()]
+		}))
+		.pipe(gulp.dest('./dist/views')),
+		gulp.src('./app/index.html')
+		.pipe(usemin({
+			css: [minifycss(), rev()],
+			js: [ngannotate(), uglify(), rev()]
+		}))
+		.pipe(gulp.dest('./dist'));
 });
 
 //Images
@@ -74,7 +79,7 @@ gulp.task('browser-sync',['default'], function() {
   browserSync.init(files, {
     server: {
       baseDir : "dist",
-      index: "menu.html"
+      index: "index.html"
     }  
   });
   

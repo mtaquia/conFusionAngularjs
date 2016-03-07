@@ -54,7 +54,7 @@ angular.module('confusionApp')
 
                 console.log($scope.feedback);
 
-                if ($scope.feedback.agree && ($scope.feedback.mychannel == "")) {
+                if ($scope.feedback.agree && ($scope.feedback.mychannel === "")) {
                     $scope.invalidChannelSelection = true;
                     console.log('incorrect');
                 }
@@ -81,6 +81,8 @@ angular.module('confusionApp')
             $scope.mycomment = {rating:5, comment:"", author:"", date:""};
 
             $scope.submitComment = function () {
+				// to order by rating
+				$scope.mycomment.rating = parseInt($scope.mycomment.rating);
 
                 $scope.mycomment.date = new Date().toISOString();
                 console.log($scope.mycomment);
@@ -90,10 +92,26 @@ angular.module('confusionApp')
                 $scope.commentForm.$setPristine();
 
                 $scope.mycomment = {rating:5, comment:"", author:"", date:""};
-            }
+            };
         }])
 
         // implement the IndexController and About Controller here
 
+		.controller('IndexController', ['$scope', 'menuFactory','corporateFactory', function($scope, menuFactory,corporateFactory) {
 
+            $scope.promotion = menuFactory.getPromotion(0);
+
+			//featured dish -> Uthapizza
+			$scope.fdish = menuFactory.getDish(0);
+
+			//featured leader -> execute chef
+			$scope.fleader = corporateFactory.getLeader(3);
+
+        }])
+
+		.controller('AboutController', ['$scope', 'corporateFactory', function($scope, corporateFactory) {
+
+            $scope.leaders = corporateFactory.getLeaders();
+
+        }])
 ;

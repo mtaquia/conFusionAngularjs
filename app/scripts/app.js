@@ -6,7 +6,7 @@ angular.module('confusionApp', ['ui.router'])
 
             // route for the home page
             .state('app', {
-                url:'/',
+                url: '/',
                 views: {
                     'header': {
                         templateUrl : 'views/header.html',
@@ -24,7 +24,7 @@ angular.module('confusionApp', ['ui.router'])
 
             // route for the aboutus page
             .state('app.aboutus', {
-                url:'aboutus',
+                url: 'aboutus',
                 views: {
                     'content@': {
                         templateUrl : 'views/aboutus.html',
@@ -35,7 +35,7 @@ angular.module('confusionApp', ['ui.router'])
 
             // route for the contactus page
             .state('app.contactus', {
-                url:'contactus',
+                url: 'contactus',
                 views: {
                     'content@': {
                         templateUrl : 'views/contactus.html',
